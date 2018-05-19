@@ -2,8 +2,8 @@ logging:
   pattern:
     console: '%clr(%d{yyyy-MM-dd HH:mm:ss}){yellow} [%clr(%thread){red}] %-5level --- %clr(%logger){green} | %msg%n'
   level:
-    com.cesuokanc.cache: INFO # 指定包名或类名
-    root: WARN # root级别以WARN输出
+    com.cesuokanc.cache: INFO #
+    root: WARN # root
 
 spring:
   output:

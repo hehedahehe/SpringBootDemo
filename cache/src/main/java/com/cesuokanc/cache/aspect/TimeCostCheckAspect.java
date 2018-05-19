@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class TimeCostCheckAspect {
 
-    @Pointcut("execution(* com.cesuokanc.cache.UserService.*(..))")
+    @Pointcut("@annotation(com.cesuokanc.cache.aspect.TimeCostCheck)")
     public void timeCostCheck(){
 
     }
@@ -34,13 +34,12 @@ public class TimeCostCheckAspect {
         long start = System.currentTimeMillis();
         try {
             Object result = joinPoint.proceed();
-            log.info("==>res:{}",result);
             long end = System.currentTimeMillis();
-            log.warn("==>around {}, Use Time:{} ms", joinPoint, end - start);
+            log.warn("==>{} : TIME_COST_CHECK : Use Time:{} ms", joinPoint, end - start);
             return result;
         } catch (Throwable throwable) {
             long end = System.currentTimeMillis();
-            log.warn("==>around {}, Use Time:{} ms", joinPoint, end - start);
+            log.warn("==>{} : TIME_COST_CHECK : Use Time:{} ms", joinPoint, end - start);
             throw throwable;
         }
     }

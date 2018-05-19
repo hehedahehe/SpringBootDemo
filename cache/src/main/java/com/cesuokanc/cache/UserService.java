@@ -1,5 +1,6 @@
 package com.cesuokanc.cache;
 
+import com.cesuokanc.cache.aspect.TimeCostCheck;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheConfig;
@@ -38,6 +39,7 @@ public class UserService {
         USERS_REPO.put("3", new UserInfoVO("2", "zhoujielun"));
     }
 
+    @TimeCostCheck
     @Cacheable(value = "demoCache")
 //    @Cacheable(condition = "#instrument.equals('trombone')")
     public UserInfoVO getUserById(Object id){
