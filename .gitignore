@@ -78,6 +78,6 @@ kafka/mvnw.cmd
 kafka/pom.xml
 *.iml
 target/
-.idea
+.idea/
 .mvn/
 .iml
