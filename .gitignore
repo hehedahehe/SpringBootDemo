@@ -26,3 +26,5 @@
 
 
 ./shiro/.mvn
+
+*.class
