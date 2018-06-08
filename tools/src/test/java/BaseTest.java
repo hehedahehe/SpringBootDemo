@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 /*
  * @desc
  * @author lirb
@@ -5,5 +7,7 @@
  */
 public class BaseTest {
 
-
+    @Test
+    public void testPrimitive(){
+    }
 }

@@ -7,13 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cache" />
+        <module name="druid" />
+        <module name="jpa" />
         <module name="kafka" />
+        <module name="shiro" />
         <module name="tools" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="cache" target="1.8" />
+      <module name="druid" target="1.8" />
+      <module name="jpa" target="1.8" />
       <module name="kafka" target="1.8" />
+      <module name="shiro" target="1.8" />
       <module name="tools" target="1.5" />
     </bytecodeTargetLevel>
   </component>
