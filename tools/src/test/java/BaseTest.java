@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import java.util.UUID;
+
 /*
  * @desc
  * @author lirb
@@ -9,5 +11,6 @@ public class BaseTest {
 
     @Test
     public void testPrimitive(){
+        System.out.println(UUID.randomUUID().toString().replace("-",""));
     }
 }
