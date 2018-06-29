@@ -10,3 +10,4 @@ target
 migration.html
 /modules/**/bin
 build.log
+*.log

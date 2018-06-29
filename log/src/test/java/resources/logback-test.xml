@@ -1,0 +1,23 @@
+<configuration>
+    <contextName>LogDemo</contextName>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%contextName %d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) %logger{36} - %cyan(%msg%n)</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>log/myApp.log</file>
+        <encoder>
+            <pattern>%contextName %date  [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.cesuokanc.log.demo.Tools" level="error"></logger>
+    <logger name="com.cesuokanc.log.demo" level="info"></logger>
+
+    <root level="error">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>
