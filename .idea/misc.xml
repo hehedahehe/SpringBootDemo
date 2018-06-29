@@ -12,6 +12,9 @@
         <option value="$PROJECT_DIR$/jpa/pom.xml" />
         <option value="$PROJECT_DIR$/spring/pom.xml" />
         <option value="$PROJECT_DIR$/reactive/pom.xml" />
+        <option value="$PROJECT_DIR$/akka/pom.xml" />
+        <option value="$PROJECT_DIR$/log/pom.xml" />
+        <option value="$PROJECT_DIR$/mywork/pom.xml" />
       </list>
     </option>
   </component>
