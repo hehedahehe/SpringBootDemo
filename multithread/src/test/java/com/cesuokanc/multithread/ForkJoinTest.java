@@ -1,5 +1,9 @@
 package com.cesuokanc.multithread;
 
+import org.junit.Test;
+
+import java.util.concurrent.RecursiveTask;
+
 /*
 *
 *@author lirb
@@ -7,4 +11,8 @@ package com.cesuokanc.multithread;
 *@date 2018/6/29
 */
 public class ForkJoinTest {
+
+    @Test
+    public void testRecursiveTask(){
+    }
 }
