@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 */
 public class BaseDemo {
 
+
     public static class DemoTask implements Delayed {
 
         @Override
@@ -22,5 +23,9 @@ public class BaseDemo {
         public int compareTo(Delayed o) {
             return 0;
         }
+    }
+
+    public static class SimpleTask {
+
     }
 }

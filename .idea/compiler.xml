@@ -26,7 +26,6 @@
       <module name="jpa" target="1.8" />
       <module name="kafka" target="1.8" />
       <module name="log" target="1.8" />
-      <module name="mywork" target="1.8" />
       <module name="reactive" target="1.8" />
       <module name="shiro" target="1.8" />
       <module name="spring" target="1.8" />
