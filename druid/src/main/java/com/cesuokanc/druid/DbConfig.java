@@ -18,7 +18,7 @@ public class DbConfig {
 
     @Bean
     @ConfigurationProperties("spring.datasource")
-    public DataSource dataSourceOne(){
+    public DataSource dataSourceOne() {
         return DruidDataSourceBuilder.create().build();
     }
 }

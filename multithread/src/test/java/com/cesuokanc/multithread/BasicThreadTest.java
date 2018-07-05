@@ -25,7 +25,6 @@ public class BasicThreadTest {
         t3.start();
         t3.join();
 
-
 //        t1.join();
 //        t2.join();
 //        t3.join();

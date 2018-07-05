@@ -6,8 +6,8 @@ import java.util.Queue;
 import java.util.concurrent.*;
 
 /**
- * Demo For BlockingQueue
- * which has implements as following:
+ * A demo For BlockingQueue.
+ * The interface has implements as following:
  * 1. ArrayBlockingQueue,
  * 2. DelayQueue,
  * 3. LinkedBlockingQueue,
