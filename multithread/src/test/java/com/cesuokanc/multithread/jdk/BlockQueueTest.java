@@ -1,7 +1,5 @@
 package com.cesuokanc.multithread.jdk;
 
-import com.cesuokanc.multithread.collections.BaseDemo;
-
 import java.util.Queue;
 import java.util.concurrent.*;
 
@@ -17,33 +15,35 @@ import java.util.concurrent.*;
  * 7. LinkedBlockingDeque
  * 8. org.apache.tomcat.util.threads.TaskQueue (a third-party(tomcat) implement)
  *
+ * 各自的应用场景都有哪些？
+ *
  * @author lirb
  * @email 1246531124@qq.com
  * @date 2018/6/29
  */
-public class BlockQueueTest extends BaseDemo {
+public class BlockQueueTest extends BaseTest {
 
     /**
      * Queue
      */
     protected Queue<DemoTask> deque = new ConcurrentLinkedDeque<>();
-    private Queue<DemoTask> queue = new ConcurrentLinkedQueue<>();
+    protected Queue<DemoTask> queue = new ConcurrentLinkedQueue<>();
 
 
     /**
      * Queue -> BlockingQueue
      */
-    private BlockingQueue<DemoTask> delayBlockQueue = new DelayQueue<>();
-    private BlockingQueue<DemoTask> arrayBlockQueue = new ArrayBlockingQueue<>(10);
-    private BlockingQueue<DemoTask> linkedBlockQueue = new LinkedBlockingQueue<>();
-    private BlockingQueue<DemoTask> linkedTransferQueue = new LinkedTransferQueue<>();
-    private BlockingQueue<DemoTask> priorityBlockingQueue = new PriorityBlockingQueue<>();
-    private BlockingDeque<DemoTask> linkedBlockDeque = new LinkedBlockingDeque<>();
+    protected BlockingQueue<DemoTask> delayBlockQueue = new DelayQueue<>();
+    protected BlockingQueue<DemoTask> arrayBlockQueue = new ArrayBlockingQueue<>(10);
+    protected BlockingQueue<DemoTask> linkedBlockQueue = new LinkedBlockingQueue<>();
+    protected BlockingQueue<DemoTask> linkedTransferQueue = new LinkedTransferQueue<>();
+    protected BlockingQueue<DemoTask> priorityBlockingQueue = new PriorityBlockingQueue<>();
+    //protected BlockingDeque<DemoTask> linkedBlockDeque = new LinkedBlockingDeque<>();
 
     /**
      * BlockingQueue -> SynchronousQueue
      */
-    private SynchronousQueue<DemoTask> synchronousQueue = new SynchronousQueue<>();
+    protected SynchronousQueue<DemoTask> synchronousQueue = new SynchronousQueue<>();
 
 
     /**
