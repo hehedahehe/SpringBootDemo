@@ -23,6 +23,7 @@
         <module>druid</module>
         <module>jpa</module>
         <module>tools</module>
+        <module>redis</module>
     </modules>
 
 </project>

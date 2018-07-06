@@ -25,8 +25,8 @@ public class FeignTest {
         IHttpDemoService httpDemoService = Feign.builder().decoder(new MyDecoder() {
             @Override
             public Object parseBody(String content) {
-                //泛型部分必须重新进行反序列化 -- fastjson
                 RestResult<User> restResult = JSON.parseObject(content, RestResult.class);
+                //泛型部分必须重新进行反序列化 -- fastjson
                 return JSON.parseObject(JSON.toJSONString(restResult.getData()), User.class);
             }
         }).target(IHttpDemoService.class, DEMO_URL);
@@ -46,8 +46,8 @@ public class FeignTest {
                 .decoder(new MyDecoder() {
                     @Override
                     public Object parseBody(String content) {
-                        //泛型部分必须重新进行反序列化 -- fastjson
                         RestResult<User> restResult = JSON.parseObject(content, RestResult.class);
+                        //泛型部分必须重新进行反序列化 -- fastjson
                         return JSON.parseObject(JSON.toJSONString(restResult.getData()), User.class);
                     }
                 }).target(IHttpDemoService.class, DEMO_URL);

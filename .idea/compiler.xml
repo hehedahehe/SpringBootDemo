@@ -20,6 +20,7 @@
         <module name="mywork" />
         <module name="newfeature" />
         <module name="reactive" />
+        <module name="redis" />
         <module name="rest" />
         <module name="shiro" />
         <module name="spring" />
@@ -40,6 +41,7 @@
       <module name="logic" target="1.8" />
       <module name="newfeature" target="1.8" />
       <module name="reactive" target="1.8" />
+      <module name="redis" target="1.8" />
       <module name="rest" target="1.8" />
       <module name="shiro" target="1.8" />
       <module name="simpleweb" target="1.8" />
