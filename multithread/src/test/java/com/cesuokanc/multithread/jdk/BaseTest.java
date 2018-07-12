@@ -1,7 +1,5 @@
 package com.cesuokanc.multithread.jdk;
 
-import lombok.Data;
-
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
 
@@ -15,6 +13,9 @@ public class BaseTest {
 
     public static class DemoTask implements Delayed {
 
+        private String name;
+        private Integer id;
+
         public String getName() {
             return name;
         }
@@ -23,10 +24,15 @@ public class BaseTest {
             this.name = name;
         }
 
-        private String name;
-
+        public Integer getId(){
+            return this.id;
+        }
         public DemoTask(String name){
             this.name = name;
+        }
+
+        public DemoTask(Integer id){
+            this.id = id;
         }
 
         @Override

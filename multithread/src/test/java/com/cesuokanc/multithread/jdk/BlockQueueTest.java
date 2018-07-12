@@ -1,5 +1,8 @@
 package com.cesuokanc.multithread.jdk;
 
+import org.junit.Test;
+
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.*;
 
@@ -22,6 +25,8 @@ import java.util.concurrent.*;
  * @date 2018/6/29
  */
 public class BlockQueueTest extends BaseTest {
+
+    protected Queue<DemoTask> oridinaryQueue = new LinkedList<>();
 
     /**
      * Queue
@@ -50,5 +55,12 @@ public class BlockQueueTest extends BaseTest {
      * 第三方实现
      */
     //org.apache.tomcat.util.threads.TaskQueue -- Tomcat
+
+    @Test
+    public void test1(){
+        System.out.println(2);
+        System.out.println(2>>1);
+        System.out.println(2<<1);
+    }
 
 }

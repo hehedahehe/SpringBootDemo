@@ -5,12 +5,12 @@ import org.springframework.util.Assert;
 import java.util.LinkedList;
 import java.util.List;
 
-/*
-*
-*@author lirb
-*@email 12465311242@qq.com
-*@date 2018/6/28
-*/
+/**
+ *
+ *@author lirb
+ *@email 12465311242@qq.com
+ *@date 2018/6/28
+ */
 public class MyQueue{
 
     private Checker checker = new Checker();

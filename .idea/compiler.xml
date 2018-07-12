@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="akka" />
+        <module name="aop" />
         <module name="cache" />
         <module name="cloud" />
         <module name="druid" />
@@ -29,6 +30,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="akka" target="1.8" />
+      <module name="aop" target="1.8" />
       <module name="cache" target="1.8" />
       <module name="cloud" target="1.8" />
       <module name="druid" target="1.8" />

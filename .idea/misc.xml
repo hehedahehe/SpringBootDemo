@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/newfeature/pom.xml" />
         <option value="$PROJECT_DIR$/SimpleWeb/pom.xml" />
         <option value="$PROJECT_DIR$/feign/pom.xml" />
+        <option value="$PROJECT_DIR$/aop/pom.xml" />
       </list>
     </option>
   </component>

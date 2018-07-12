@@ -3,12 +3,12 @@ package com.cesuokanc.multithread;
 
 import org.junit.Test;
 
-/*
-*
-*@author lirb
-*@email 12465311242@qq.com
-*@date 2018/6/28
-*/
+/**
+ *
+ *@author lirb
+ *@email 12465311242@qq.com
+ *@date 2018/6/28
+ */
 public class BasicThreadTest {
 
     @Test
