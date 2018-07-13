@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
 /**
  * @author liruibo
@@ -60,8 +62,8 @@ public class ArrayBlockingQueueTest extends BlockQueueTest {
 
         Thread producer = new Producer(oridinaryQueue);
 
-        Thread consumer1 = new Consumer<>(oridinaryQueue,1);
-        Thread consumer2 = new Consumer<>(oridinaryQueue,2);
+        Thread consumer1 = new Consumer<>(oridinaryQueue, 1);
+        Thread consumer2 = new Consumer<>(oridinaryQueue, 2);
 
         producer.start();
         consumer1.start();
@@ -84,6 +86,69 @@ public class ArrayBlockingQueueTest extends BlockQueueTest {
     }
 
 
+    @Test
+    public void testBlockingQueue() {
+        Thread producer = new Producer(arrayBlockQueue);
+
+        Thread consumer1 = new Consumer<>(arrayBlockQueue, 1);
+        Thread consumer2 = new Consumer<>(arrayBlockQueue, 2);
+
+        producer.start();
+        consumer1.start();
+        consumer2.start();
+
+        try {
+            producer.join();
+            consumer1.join();
+            consumer2.join();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("===>");
+        Set<Integer> ids1 = ((Consumer) consumer1).getTaskRecords();
+        Set<Integer> ids2 = ((Consumer) consumer2).getTaskRecords();
+        System.out.println("consumer1:" + ids1.size());
+        System.out.println("consumer2:" + ids2.size());
+        System.out.println("producer:" + ((Producer) producer).getCount());
+        ids1.retainAll(ids2);
+        System.out.println(ids1);
+    }
+
+
+    @Test
+    public void testSynchronized() {
+
+        BlockingQueue<DemoTask> arrayBlockQueue = new ArrayBlockingQueue<>(300);
+
+        Thread producer = new Producer(arrayBlockQueue);
+
+        Thread consumer1 = new Consumer<>(arrayBlockQueue, 1);
+        Thread consumer2 = new Consumer<>(arrayBlockQueue, 2);
+
+        producer.start();
+        consumer1.start();
+        consumer2.start();
+
+        try {
+            producer.join();
+            consumer1.join();
+            consumer2.join();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("===>");
+        Set<Integer> ids1 = ((Consumer) consumer1).getTaskRecords();
+        Set<Integer> ids2 = ((Consumer) consumer2).getTaskRecords();
+        System.out.println("consumer1:" + ids1.size());
+        System.out.println("consumer2:" + ids2.size());
+        System.out.println("producer:" + ((Producer) producer).getCount());
+        ids1.retainAll(ids2);
+        System.out.println(ids1);
+    }
+
+
     public static class Consumer<T extends DemoTask> extends Thread {
 
         private Set<Integer> taskRecords = new HashSet<>();
@@ -95,7 +160,8 @@ public class ArrayBlockingQueueTest extends BlockQueueTest {
             this.id = id;
         }
 
-        public Set<Integer> getTaskRecords(){
+
+        public Set<Integer> getTaskRecords() {
             return taskRecords;
         }
 
@@ -105,16 +171,20 @@ public class ArrayBlockingQueueTest extends BlockQueueTest {
                 try {
                     Random random = new Random();
                     Thread.sleep(random.nextInt(10));
-                    T t = queue.poll();
+                    T t;
+                    synchronized(this) {
+                        t = queue.poll();
+                    }
                     if (t != null) {
                         taskRecords.add(t.getId());
-                        System.out.println("consumer "+this.id+" consuming....消费了"+taskRecords.size()+"个任务。");
-                        if(taskRecords.size()>200){
+                        if (taskRecords.size() > 400) {
+                            System.out.println("consumer " + this.id + " consuming....消费了" + taskRecords.size() + "个任务。");
                             break;
                         }
                     }
                 } catch (Exception e) {
-                    System.out.println("====>Interrupted...");
+                    System.out.println("consumer" + this.id + "====>Interrupted...");
+                    break;
                 }
             }
         }
@@ -124,8 +194,13 @@ public class ArrayBlockingQueueTest extends BlockQueueTest {
     public static class Producer extends Thread {
         private Queue<DemoTask> queue;
         private int count = 0;
+
         public Producer(Queue<DemoTask> queue) {
             this.queue = queue;
+        }
+
+        public int getCount() {
+            return count;
         }
 
         @Override
@@ -135,14 +210,15 @@ public class ArrayBlockingQueueTest extends BlockQueueTest {
                     Random random = new Random();
                     Thread.sleep(random.nextInt(10));
                     DemoTask demoTask = new DemoTask(random.nextInt(100000));
-                    System.out.println("producing...." + demoTask.getId() + "===="+queue.size()+"个任务");
                     queue.add(demoTask);
                     count++;
-                    if(count==1000){
+                    if (count == 1000) {
+                        System.out.println("producing....====" + count + "个任务");
                         break;
                     }
                 } catch (Exception e) {
-                    System.out.println("====>Interrupted...");
+                    System.out.println("producer====>Interrupted...");
+                    break;
                 }
             }
         }
