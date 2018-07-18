@@ -2,12 +2,12 @@ package com.cesuokanc.multithread;
 
 import org.springframework.context.annotation.Configuration;
 
-/*
-*
-*@author lirb
-*@email 12465311242@qq.com
-*@date 2018/6/29
-*/
+/**
+ *
+ *@author lirb
+ *@email 12465311242@qq.com
+ *@date 2018/6/29
+ */
 @Configuration
 public class ApplicationConfig {
 
