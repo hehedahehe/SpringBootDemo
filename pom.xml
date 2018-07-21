@@ -24,6 +24,15 @@
         <module>jpa</module>
         <module>tools</module>
         <module>redis</module>
+        <module>multithread</module>
+        <module>log</module>
+        <module>json</module>
+        <module>reactive</module>
+        <module>newfeature</module>
+        <module>aop</module>
+        <module>akka</module>
+        <module>feign</module>
+        <module>hystrix</module>
     </modules>
 
 </project>

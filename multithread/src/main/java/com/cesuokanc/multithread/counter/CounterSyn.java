@@ -1,4 +1,4 @@
-package com.cesuokanc.multithread;
+package com.cesuokanc.multithread.counter;
 
 /**
  * @author liruibo

@@ -21,8 +21,13 @@
         <option value="$PROJECT_DIR$/SimpleWeb/pom.xml" />
         <option value="$PROJECT_DIR$/feign/pom.xml" />
         <option value="$PROJECT_DIR$/aop/pom.xml" />
+        <option value="$PROJECT_DIR$/autoconfiguration/pom.xml" />
+        <option value="$PROJECT_DIR$/statemachine/pom.xml" />
       </list>
     </option>
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/multithread/src/main/java/com/cesuokanc/multithread/demo/volatile/Singleton.kt" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>
